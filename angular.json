@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "YMB": {
+    "your-motivational-buddy": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -67,10 +67,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "YMB:build:production"
+              "buildTarget": "your-motivational-buddy:build:production"
             },
             "development": {
-              "buildTarget": "YMB:build:development"
+              "buildTarget": "your-motivational-buddy:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -78,7 +78,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "buildTarget": "YMB:build"
+            "buildTarget": "your-motivational-buddy:build"
           }
         },
         "test": {
