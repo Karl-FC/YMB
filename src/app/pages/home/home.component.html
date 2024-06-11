@@ -5,12 +5,34 @@ Lorem ipsum dolor sit amet consectetur, adipisicing elit. Molestiae est vel magn
 <br>
 
 <section>
-    <h1>User Profiles</h1>
+    <h1>Posts</h1> <br>
     <div *ngFor="let article of articles">
         <h1>{{ article.title }}</h1>
-        <p>{{ article.content }}</p>
+        <pre>{{article.content}}</pre>
         <span>Author: {{ article.author }}</span>
+        <br><br>
       </div>      
 </section>
 
-<button (click)="NewPost.AddData()">Click me</button>
+<div class="divider"></div>
+
+<h1>What's on your mind?</h1>
+
+
+<div id="NewPost">
+  <form>
+    <textarea class="textarea textarea-success" 
+    placeholder="Title"
+    id="Title"
+    [formControl]="insertTitle"
+    ></textarea>
+    <textarea class="textarea textarea-success" 
+    placeholder="Content"
+    id="Content"
+    rows="4" cols="50"
+    [formControl]="addContent"
+    ></textarea>
+    <button (click)="postArticle()" class="btn-primary">POST</button>
+  </form>
+  
+</div>

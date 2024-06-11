@@ -12,18 +12,24 @@ export class NewPostService {
     this.db = getFirestore()
   }
 
-  async AddData(){
+  async AddData(insertTitle:string, 
+    addContent:string, 
+    Author:string ){
+
     const db = this.db;
     const PostCollections = "article"
-    const Posts: any[] = [];
+    
 
     // Add a new document with a generated id.
     const docRef = await addDoc(collection(db, PostCollections), {
-    title: "Bagong title",
-    content: "new content",
-    author: "Anon"
+    title: insertTitle,
+    content: addContent,
+    author: Author,
+    time: Timestamp.now(),
   });
   
-console.log("Document written with ID: ", docRef.id);
+console.log("Document written with ID: ", docRef.id); //Pangcheck lang ng post ID hahaha
   }
+
+
 }

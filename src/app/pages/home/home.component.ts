@@ -7,12 +7,15 @@ import { Observable } from 'rxjs';
 
 import { GetpostService } from '../features/getpost.service';
 import { NewPostService } from '../features/new-post.service';
+import { FormsModule, ReactiveFormsModule, FormControl } from '@angular/forms';
 
 export interface ArticlePost {
   title: string;
   content: string;
   author: string;
 }
+
+
 
 @Component({
   selector: 'app-home',
@@ -24,15 +27,20 @@ export interface ArticlePost {
   </div>
 `,
   standalone: true,
-  imports: [routes,RouterOutlet,RouterLink,RouterModule, CommonModule],
+  imports: [routes,RouterOutlet,RouterLink,RouterModule, CommonModule, FormsModule, ReactiveFormsModule],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss'
 })
+
+
 
 export class HomeComponent {
   private firestore: Firestore = inject(Firestore); // inject Cloud Firestore
   article$: Observable<ArticlePost[]>;
   articles: any[] = [];
+    //Ito yun sa forms
+      insertTitle = new FormControl('');
+      addContent = new FormControl('');
 
   constructor(public getIt:GetpostService, public NewPost:NewPostService) {
       // get a reference to the user-profile collection
@@ -43,11 +51,26 @@ export class HomeComponent {
   }
 
   ngOnInit() {
-    this.getArticles();
+    this.getArticles(10); //Sa pag open mismo ng page, dapat may makikita ang user na 10 articles
   }
 
-  async getArticles() {
-    this.articles = await this.getIt.getData();
+  reLoad(event: Event) {
+    event.preventDefault();
+    location.reload();
+  }
+
+  async getArticles(ilanNga: number) {
+    this.articles = await this.getIt.getData(ilanNga);
+  }
+
+  async postArticle(){
+    let Title = this.insertTitle.value
+    let Content = this.addContent.value
+    let Author = "YMB"
+
+    if (Title !== null && Content !== null) {
+    this.NewPost.AddData(Title, Content, Author);
+    }
   }
 }
 
