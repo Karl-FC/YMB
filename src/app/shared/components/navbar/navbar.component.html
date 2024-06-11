@@ -1,151 +1,21 @@
-<div id="navbar" class="navbar bg-accent" style="z-index: 100;">
-
-    <!--NAVBAR START (MOBILE)------------------------------------------------------------------------->  
-        <div class="navbar-start">
-          <div class="dropdown">
-            <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
-              <svg xmlns="http://www.w3.org/2000/svg" 
-                class="h-5 w-5" 
-                fill="none" 
-                viewBox="0 0 24 24" 
-                stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
-            </div>
-    
-    
-        <!--NAVBAR DROPDOWN (MOBILE)------------------------------------------------------------------------->
-            <ul tabindex="0" class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow 
-                        bg-neutral rounded-box w-52" >
-              <h1
-              style="font-size: 18px; 
-                        font-weight: 600;
-                        padding:2px">Bakal-AREA.net</h1>
-                    <li><a>Axial Tension</a>
-                          <ul class="p-2">
-                            <li><a class="nav-link" routerLinkActive="active" routerLink="/Tension/Analysis">Analyzer</a></li>
-                            <li><a class="nav-link" routerLinkActive="active" routerLink="/Tension/Design">Designer</a></li>
-                            </ul></li>
-                    <li><a>Axial Compression</a>
-                        <ul class="p-2">
-                          <li><a class="nav-link" routerLinkActive="active" routerLink="/Compression/Analysis">Analyzer</a></li>
-                          <li><a class="nav-link" routerLinkActive="active" routerLink="/Compression/Design">Designer</a></li>
-                          </ul></li>
-                  <li><a>Bending</a>
-                      <ul class="p-2">
-                        <li><a class="nav-link" routerLinkActive="active" routerLink="/Bending/Analysis">Analyzer</a></li>
-                        <li><a class="nav-link" routerLinkActive="active" routerLink="/Bending/Design">Designer</a></li>
-                        </ul></li>
-                  <li><a>Shear</a>
-                      <ul class="p-2">
-                        <li><a class="nav-link" routerLinkActive="active" routerLink="/Shear/Analysis">Analyzer</a></li>
-                        <li><a class="nav-link" routerLinkActive="active" routerLink="/Shear/Design">Designer</a></li>
-                        </ul></li>
-                    <li><a>Settings</a>
-                      <ul class="p-2">
-                        <li><label for="theme_modal">Theme</label></li>
-                        <li><a class="nav-link" routerLinkActive="active" routerLink="/About">About us</a></li>
-                      </ul></li>
-            </ul>
-          </div>
-          <a routerLinkActive="active" routerLink="/Home"  
-          class="btn btn-ghost text-xl">
-          <img src='assets/images/Logo.png' width="32px">
-          Bakal-AREA.net</a>
-        </div>
-        
-    
-    
-    
-    <!--NAVBAR CENTER (PC)------------------------------------------------------------------------->
-    
-    
-        <div class="navbar-center hidden lg:flex">
-          <ul class="menu menu-horizontal px-1">
-            <li>
-              <details>
-                <summary>Tension</summary>
-                <ul class="p-2" style="z-index: 999;">
-                  <li><a class="nav-link" routerLinkActive="active" routerLink="/Tension/Analysis">Analyzer</a></li>
-                  <li><a class="nav-link" routerLinkActive="active" routerLink="/Tension/Design">Designer</a></li>
-                </ul>
-              </details>
-              </li>
-            <li>
-                <details>
-                  <summary>Compression</summary>
-                  <ul class="p-2" style="z-index: 999;">
-                    <li><a class="nav-link" routerLinkActive="active" routerLink="/Compression/Analysis">Analyzer</a></li>
-                    <li><a class="nav-link" routerLinkActive="active" routerLink="/Compression/Design">Designer</a></li>
-                  </ul>
-                </details>
-                </li>
-            <li>
-                <details>
-                  <summary>Bending</summary>
-                  <ul class="p-2" style="z-index: 999;">
-                    <li><a class="nav-link" routerLinkActive="active" routerLink="/Bending/Analysis">Analyzer</a></li>
-                    <li><a class="nav-link" routerLinkActive="active" routerLink="/Bending/Design">Designer</a></li>
-                  </ul>
-                </details>
-                </li>
-            <li>
-                <details>
-                  <summary>Shear</summary>
-                  <ul class="p-2" style="z-index: 999;">
-                    <li><a class="nav-link" routerLinkActive="active" routerLink="/Shear/Analysis">Analyzer</a></li>
-                    <li><a class="nav-link" routerLinkActive="active" routerLink="/Shear/Design">Designer</a></li>
-                  </ul>
-                </details>
-                </li>
+<div class="navbar bg-base-100">
+  <div class="flex-1">
+    <a class="btn btn-ghost text-xl">Your Motivational Buddy</a>
+  </div>
+  <div class="flex-none">
+    <ul class="menu menu-horizontal px-1">
+      <li><a>Link</a></li>
+      <li>
+        <details>
+          <summary>
+            Parent
+          </summary>
+          <ul class="p-2 bg-base-100 rounded-t-none">
+            <li><a>Link 1</a></li>
+            <li><a>Link 2</a></li>
           </ul>
-        </div>
-    
-    <!--NAVBAR END (both?)------------------------------------------------------------------------->
-    
-        <div class="navbar-end">
-          <div class="dropdown dropdown-end">
-            <div tabindex="0" role="button" class="btn btn-ghost btn-circle avatar">
-              <svg xmlns="http://www.w3.org/2000/svg" 
-                    fill="none" 
-                    viewBox="0 0 24 24" 
-                    stroke-width="1.5" 
-                    stroke="currentColor" 
-                    class="w-6 h-6">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M12 6.042A8.967 8.967 0 0 0 6 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 0 1 6 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 0 1 6-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0 0 18 18a8.967 8.967 0 0 0-6 2.292m0-14.25v14.25" />
-              </svg>
-            </div>
-            <ul tabindex="0" style="z-index: 999;" class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
-              <div class="hidePC">
-              <h1 routerLinkActive="active" routerLink="/Home"
-              style="font-size: 18px; 
-                        font-weight: 600;
-                        padding:2px">Bakal-AREA.net</h1>
-                    <li><a>Axial Tension</a>
-                          <ul class="p-2">
-                            <li><a class="nav-link" routerLinkActive="active" routerLink="/Tension/Analysis">Analyzer</a></li>
-                            <li><a class="nav-link" routerLinkActive="active" routerLink="/Tension/Design">Designer</a></li>
-                            </ul></li>
-                    <li><a>Axial Compression</a>
-                        <ul class="p-2">
-                          <li><a class="nav-link" routerLinkActive="active" routerLink="/Compression/Analysis">Analyzer</a></li>
-                          <li><a class="nav-link" routerLinkActive="active" routerLink="/Compression/Design">Designer</a></li>
-                          </ul></li>
-                  <li><a>Bending</a>
-                      <ul class="p-2">
-                        <li><a class="nav-link" routerLinkActive="active" routerLink="/Bending/Analysis">Analyzer</a></li>
-                        <li><a class="nav-link" routerLinkActive="active" routerLink="/Bending/Design">Designer</a></li>
-                        </ul></li>
-                  <li><a>Shear</a>
-                      <ul class="p-2">
-                        <li><a class="nav-link" routerLinkActive="active" routerLink="/Shear/Analysis">Analyzer</a></li>
-                        <li><a class="nav-link" routerLinkActive="active" routerLink="/Shear/Design">Designer</a></li>
-                        </ul></li>
-                      </div>
-                    <li><a>Settings</a>
-                      <ul class="p-2">
-                        <li><label for="theme_modal">Theme</label></li>
-                        <li><a class="nav-link" routerLinkActive="active" routerLink="/About">About us</a></li>
-                      </ul></li>
-            </ul>
-          </div>
-          </div>
+        </details>
+      </li>
+    </ul>
+  </div>
+</div>
