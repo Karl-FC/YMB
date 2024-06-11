@@ -2,7 +2,7 @@ import { Component,inject, OnInit } from '@angular/core';
 import { RouterLink, RouterModule, RouterOutlet } from '@angular/router';
 import { routes } from '../../app.routes';
 import { CommonModule } from '@angular/common';
-import { Firestore, collection, collectionData } from '@angular/fire/firestore';
+import { Firestore, collection, collectionData, Timestamp } from '@angular/fire/firestore';
 import { Observable } from 'rxjs';
 
 import { GetpostService } from '../features/getpost.service';
@@ -16,19 +16,21 @@ export interface ArticlePost {
   title: string;
   content: string;
   author: string;
+  time: Timestamp;
+  image: string;
 }
 
 
 
 @Component({
   selector: 'app-home',
-  template: `
+ /* template: `
   <div *ngFor="let article of articles">
     <h3>{{ article.title }}</h3>
     <p>{{ article.content }}</p>
     <span>Author: {{ article.author }}</span>
   </div>
-`,
+`,*/
   standalone: true,
   imports: [routes,RouterOutlet,RouterLink,RouterModule, CommonModule, FormsModule, ReactiveFormsModule,
     MatCardModule, MatButtonModule],
