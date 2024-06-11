@@ -9,6 +9,9 @@ import { GetpostService } from '../features/getpost.service';
 import { NewPostService } from '../features/new-post.service';
 import { FormsModule, ReactiveFormsModule, FormControl } from '@angular/forms';
 
+import {MatButtonModule} from '@angular/material/button';
+import {MatCardModule} from '@angular/material/card';
+
 export interface ArticlePost {
   title: string;
   content: string;
@@ -27,7 +30,8 @@ export interface ArticlePost {
   </div>
 `,
   standalone: true,
-  imports: [routes,RouterOutlet,RouterLink,RouterModule, CommonModule, FormsModule, ReactiveFormsModule],
+  imports: [routes,RouterOutlet,RouterLink,RouterModule, CommonModule, FormsModule, ReactiveFormsModule,
+    MatCardModule, MatButtonModule],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss'
 })
@@ -68,7 +72,7 @@ export class HomeComponent {
     let Content = this.addContent.value
     let Author = "YMB"
 
-    if (Title !== null && Content !== null) {
+    if (Title !== null && Content !== null) { //Para di magreklamo na null daw hanep
     this.NewPost.AddData(Title, Content, Author);
     }
   }

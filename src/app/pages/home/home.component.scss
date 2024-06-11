@@ -4,3 +4,23 @@ pre {
     white-space: pre;
     margin: 1em 0;
   }
+
+  .articleCard {
+    max-width: 500px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.92),
+                 0 6px 20px 0 rgba(0, 0, 0, 0.9);
+    background-color: oklch(var(--s)); //Secondary color
+    color: oklch(var(--bc)); // Base-content
+  }
+  
+  .articleCardPhoto {
+    background-image: url('https://scontent.fwnp1-1.fna.fbcdn.net/v/t1.6435-9/119464667_112550267258100_212535215097380026_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=5f2048&_nc_eui2=AeEN1vx6ZcZH8bgdqBhNu5wZXf-DeRlSTQBd_4N5GVJNAPKKoXRobwWBYe-qWtzB_-zUN864xwRc6wicf8PecsKs&_nc_ohc=CKN5qNYjPtAQ7kNvgFKY5G_&_nc_ht=scontent.fwnp1-1.fna&oh=00_AYBBjCdtsx4sNSh49pCyeX_2X4bpOCyCYM7p-n9QmnzGGg&oe=668FC18A');
+    background-size: cover;
+  }
+
+  #latestPosts{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }

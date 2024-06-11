@@ -1,6 +1,6 @@
 import {
   AuthInstances
-} from "./chunk-UI4PZW6U.js";
+} from "./chunk-NGOUY54C.js";
 import {
   Component,
   FirebaseApp,
@@ -27,7 +27,7 @@ import {
   ɵgetAllInstancesOf,
   ɵgetDefaultInstanceOf,
   ɵzoneWrap
-} from "./chunk-Y3EBA6HQ.js";
+} from "./chunk-DG7HUE7O.js";
 import {
   InjectionToken,
   Injector,
@@ -52,7 +52,7 @@ import {
   timer,
   ɵɵdefineInjector,
   ɵɵdefineNgModule
-} from "./chunk-QUIXLOCC.js";
+} from "./chunk-WYREIAFF.js";
 
 // node_modules/@firebase/webchannel-wrapper/dist/bloom-blob/esm/bloom_blob_es2018.js
 var commonjsGlobal = typeof globalThis !== "undefined" ? globalThis : typeof window !== "undefined" ? window : typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : {};

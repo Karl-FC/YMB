@@ -10,7 +10,7 @@ module.exports = {
   daisyui: {
     themes: [
       {
-      neutral: {
+      wisdom: {
         ...require("daisyui/src/theming/themes")["garden"],
         "primary": "#92C7CF", //header ng table
         "secondary": "#DBDACC", //Backdrop ng mga card
@@ -84,23 +84,6 @@ module.exports = {
         "warning": "#B0C400",
         "error": "#523213",
       },
-      loverainville: {
-        ...require("daisyui/src/theming/themes")["luxury"],
-        "primary": "#9E1711",
-        "secondary": "#4A1414",
-        "accent": "#8B0001",
-        "neutral": "#760808",
-        "base-50": "#ff9b9b",
-        "base-100": "#760808",
-        "base-200": "#8B0001",
-        "info": "#b60000",
-        "success": "#25524D",
-        "warning": "#B37422",
-        "error": "#8A0C18",
-        "base-content": "#FFA500", //Default text
-        "primary-content": "#FFA500",
-        
-      },
-    },  'pastel','garden', 'lofi','dark', 'business', 'luxury']
+    },  'pastel','garden','dark', 'lemonade', 'autumn', 'bumblebee']
   }
 }

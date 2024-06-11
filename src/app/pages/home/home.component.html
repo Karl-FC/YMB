@@ -4,15 +4,39 @@ Lorem ipsum dolor sit amet consectetur, adipisicing elit. Molestiae est vel magn
 <br>
 <br>
 
-<section>
-    <h1>Posts</h1> <br>
-    <div *ngFor="let article of articles">
-        <h1>{{ article.title }}</h1>
-        <pre>{{article.content}}</pre>
-        <span>Author: {{ article.author }}</span>
-        <br><br>
-      </div>      
+<section id="latestPosts">
+  <div *ngFor="let article of articles">
+  <mat-card class="articleCard">
+    <mat-card-header>
+      <div mat-card-avatar class="articleCardPhoto"></div>
+      <mat-card-title>{{ article.title }}</mat-card-title>
+      <mat-card-subtitle>{{ article.author }} - {{ article.time }}</mat-card-subtitle>
+    </mat-card-header>
+    <img mat-card-image src="https://scontent.fwnp1-1.fna.fbcdn.net/v/t1.6435-9/119464667_112550267258100_212535215097380026_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=5f2048&_nc_eui2=AeEN1vx6ZcZH8bgdqBhNu5wZXf-DeRlSTQBd_4N5GVJNAPKKoXRobwWBYe-qWtzB_-zUN864xwRc6wicf8PecsKs&_nc_ohc=CKN5qNYjPtAQ7kNvgFKY5G_&_nc_ht=scontent.fwnp1-1.fna&oh=00_AYBBjCdtsx4sNSh49pCyeX_2X4bpOCyCYM7p-n9QmnzGGg&oe=668FC18A" alt="Photo of a Shiba Inu">
+    <mat-card-content>
+      <pre>
+        {{article.content}}
+      </pre>
+    </mat-card-content>
+    <mat-card-actions>
+      <button class="btn btn-primary">See Post</button>
+      <button class="btn btn-primary">SHARE</button>
+    </mat-card-actions>
+  </mat-card>
+  <br><br>
+</div>
+
+<div class="card w-96 bg-base-100 shadow-xl">
+  <div class="card-body">
+    <h2 class="card-title">Shoes!</h2>
+    <p>If a dog chews shoes whose shoes does he choose?</p>
+  </div>
+  <figure><img src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg" alt="Shoes" /></figure>
+</div>
+
 </section>
+
+
 
 <div class="divider"></div>
 
