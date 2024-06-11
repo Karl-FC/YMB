@@ -1,25 +1,25 @@
 import { Injectable } from '@angular/core';
-import { collection, doc, getDocs, addDoc, Timestamp } from "@angular/fire/firestore"
-import { initializeApp } from "@angular/fire/app"
-import { getFirestore } from "@angular/fire/firestore"
+import { collection, doc, getDocs, addDoc, Timestamp } from "@angular/fire/firestore" //Initialize muna ng firestore
+import { getFirestore } from "@angular/fire/firestore"  //@angular/fire dapat
 import { Firestore } from 'firebase/firestore';
 
 @Injectable({
   providedIn: 'root'
 })
 export class GetpostService {
-  private db: Firestore;
+  private db: Firestore; //Ganto pagimport ng Firestore database
   constructor() { 
-    this.db = getFirestore()
+    this.db = getFirestore() //Yun mismong database ng firestore
   }
 
   async getData(){
-    // Add a new document with a generated id.
-    const ArticleReference = collection(this.db, "article");
-    const querySnapshot = await getDocs(ArticleReference);
+    // Kukunin yun mga documents sa collection na "article"
+    const PostCollections = "article"
+    const ArticleReference = collection(this.db, PostCollections);
+    const LoopNaGetDoc = await getDocs(ArticleReference); //Pang
     const Posts: any[] = [];
 
-    querySnapshot.forEach((doc) => {
+    LoopNaGetDoc.forEach((doc) => {
       console.log(doc.id, " => ", doc.data());
       Posts.push(doc.data());    
       
