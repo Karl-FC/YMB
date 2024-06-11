@@ -6,7 +6,7 @@ import { Firestore, collection, collectionData } from '@angular/fire/firestore';
 import { Observable } from 'rxjs';
 
 import { GetpostService } from '../features/getpost.service';
-
+import { NewPostService } from '../features/new-post.service';
 
 export interface ArticlePost {
   title: string;
@@ -34,7 +34,7 @@ export class HomeComponent {
   article$: Observable<ArticlePost[]>;
   articles: any[] = [];
 
-  constructor(public getIt:GetpostService) {
+  constructor(public getIt:GetpostService, public NewPost:NewPostService) {
       // get a reference to the user-profile collection
       const PostProperties = collection(this.firestore, 'article');
 
