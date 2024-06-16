@@ -2,8 +2,17 @@
     <div *ngFor="let article of articles">
   
       <div class="latest">
-        <span>
-        <figure><img class="articleCardPhoto" src="https://firebasestorage.googleapis.com/v0/b/your-motivational-buddy.appspot.com/o/119464667_112550267258100_212535215097380026_n.jpg?alt=media&token=6f87c59d-cbf7-4d73-894c-0993edcb95bb" alt="Movie"/></figure>
+
+          <ng-template #default>
+            <img class="articleCardPhoto" 
+                 src="assets/media/brand/favicon-32x32.png"/>
+          </ng-template>
+
+
+        <figure><img class="articleCardPhoto" 
+          *ngIf="article.image; else default"
+       src="{{article.image}}" 
+       alt="Article Image"/></figure>
         <div class="card-body">
           <h2 class="card-title" *ngIf=article.showtitle
               style="margin-top: -10px; 
@@ -29,7 +38,6 @@
               </div>
 
           </div>
-      </span>
       </div>
         <br>
         <br>

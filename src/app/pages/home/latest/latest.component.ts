@@ -41,7 +41,7 @@ export class LatestComponent {
   }
 
   ngOnInit() {
-    this.getArticles(10); //Sa pag open mismo ng page, dapat may makikita ang user na 10 articles
+    this.getArticles(20); //Sa pag open mismo ng page, dapat may makikita ang user na 10 articles
   }
 
   reLoad(event: Event) {

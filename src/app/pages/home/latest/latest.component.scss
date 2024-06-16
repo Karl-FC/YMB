@@ -1,6 +1,10 @@
 
 
-pre {
+.card-body {
+  height: 300px;
+}
+
+pre { //yun text
     display: block;
     white-space: pre-wrap;
     font-family: sans-serif;
@@ -35,9 +39,8 @@ pre {
     color: oklch(var(--bc)); // Base-content
   }
 
-  .card-body {
-    height: 300px;
-  }
+
+
   .articleCardPhoto {
     width: 300px;
     height: 300px;
