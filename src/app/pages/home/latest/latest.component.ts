@@ -1,13 +1,10 @@
 import { Component,inject, OnInit } from '@angular/core';
 import { RouterLink, RouterModule, RouterOutlet } from '@angular/router';
-import { routes } from '../../app.routes';
-import { CommonModule } from '@angular/common';
+import { CommonModule, NgIf } from '@angular/common';
 import { Firestore, collection, collectionData, Timestamp } from '@angular/fire/firestore';
 import { Observable } from 'rxjs';
 
-import { GetpostService } from '../features/getpost.service';
-import { NewPostService } from '../features/new-post.service';
-import { FormsModule, ReactiveFormsModule, FormControl } from '@angular/forms';
+import { GetpostService } from '../../features/getpost.service';
 
 import {MatButtonModule} from '@angular/material/button';
 import {MatCardModule} from '@angular/material/card';
@@ -16,39 +13,26 @@ export interface ArticlePost {
   title: string;
   content: string;
   author: string;
-  time: Timestamp;
+  time: Timestamp;  
   image: string;
 }
 
-
-
 @Component({
-  selector: 'app-home',
- /* template: `
-  <div *ngFor="let article of articles">
-    <h3>{{ article.title }}</h3>
-    <p>{{ article.content }}</p>
-    <span>Author: {{ article.author }}</span>
-  </div>
-`,*/
+  selector: 'app-latest',
   standalone: true,
-  imports: [routes,RouterOutlet,RouterLink,RouterModule, CommonModule, FormsModule, ReactiveFormsModule,
-    MatCardModule, MatButtonModule],
-  templateUrl: './home.component.html',
-  styleUrl: './home.component.scss'
+  imports: [RouterOutlet,RouterLink,RouterModule, CommonModule,
+    MatCardModule, MatButtonModule, NgIf],
+  templateUrl: './latest.component.html',
+  styleUrl: './latest.component.scss'
 })
 
 
-
-export class HomeComponent {
+export class LatestComponent {
   private firestore: Firestore = inject(Firestore); // inject Cloud Firestore
   article$: Observable<ArticlePost[]>;
   articles: any[] = [];
-    //Ito yun sa forms
-      insertTitle = new FormControl('');
-      addContent = new FormControl('');
 
-  constructor(public getIt:GetpostService, public NewPost:NewPostService) {
+  constructor(public getIt:GetpostService) {
       // get a reference to the user-profile collection
       const PostProperties = collection(this.firestore, 'article');
 
@@ -69,14 +53,16 @@ export class HomeComponent {
     this.articles = await this.getIt.getData(ilanNga);
   }
 
-  async postArticle(){
-    let Title = this.insertTitle.value
-    let Content = this.addContent.value
-    let Author = "YMB"
+  convertTime(origTime: Timestamp): string {
+    const date = origTime.toDate(); //Para yun format, maging MM/DD/YYYY
+    const year = date.getFullYear(); //Kunin yun year
+    const month = date.toLocaleString('en-US', { month: 'long' }); //Kunin yun month, in word format
+    const day = date.getDate(); //Kunin yun day (1-31)
+    const HH = date.getUTCHours(); //Kunin yun oras (military time)
+    const MM = date.getUTCMinutes();
 
-    if (Title !== null && Content !== null) { //Para di magreklamo na null daw hanep
-    this.NewPost.AddData(Title, Content, Author);
-    }
+    return `${month} ${day}, ${year} at ${HH}:${MM}`;
   }
-}
+  
 
+}

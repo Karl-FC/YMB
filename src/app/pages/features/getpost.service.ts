@@ -27,7 +27,7 @@ export class GetpostService {
     const Posts: any[] = [];  
 
     querySnapshot .forEach((doc) => {
-      //console.log(doc.id, " => ", doc.data()); //Pangcheck lang ng array at contents hahaha
+      console.log(doc.id, " => ", doc.data()); //Pangcheck lang ng array at contents hahaha
       Posts.push(doc.data());    
       
       

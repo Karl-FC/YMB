@@ -9,7 +9,7 @@ import { Observable } from 'rxjs';
 import { Analytics } from '@angular/fire/analytics';
 import { Auth } from '@angular/fire/auth';
 import { Firestore, collection, collectionData } from '@angular/fire/firestore';
-import { HomeComponent } from './pages/home/home.component';
+import { HomeComponent } from './pages/home/landingpage/home.component';
 
 @Component({
   selector: 'app-root',

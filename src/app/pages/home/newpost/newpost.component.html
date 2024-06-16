@@ -1,0 +1,17 @@
+<div id="NewPost">
+    <form>
+      <textarea class="textarea textarea-success" 
+      placeholder="Title"
+      id="Title"
+      [formControl]="insertTitle"
+      ></textarea>
+      <textarea class="textarea textarea-success" 
+      placeholder="Content"
+      id="Content"
+      rows="8" cols="100"
+      [formControl]="addContent"
+      ></textarea>
+      <button (click)="postArticle()" class="btn btn-primary">POST</button>
+    </form>
+    
+  </div>
