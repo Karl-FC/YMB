@@ -16,8 +16,10 @@
     "@coreui/react": "^5.4.0",
     "bootstrap": "^5.3.3",
     "firebase": "^10.14.1",
+    "keen-slider": "^6.8.6",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
+    "react-responsive-carousel": "^3.2.23",
     "react-router-dom": "^6.27.0"
   },
   "devDependencies": {
