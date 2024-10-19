@@ -3,7 +3,6 @@ import ArticleCard from '../../card';
 
 const accessToken = 'EAAWCp91tUGgBOZBI5I9iikZCwJh1HWZChZCN7xNR7QRthaJNl0Iw84s0pIgeZCAiZAS6uucL0aSeEiYWFZBsVGIeEbjixhxC7Kv5UqrO8lUlQ6ItvOuMsZA0F7o9aQR8rCa2P7NLYBO6lFvxjIhvnoCfhPjjy8gR4n8lZCYAwu1OAOPVguevadygbrcfz9VFqw0cZD'; // expire december 18, 2024
 const pageId = '112504047262722'; // YMB page ID
-var ilan = 5; //Yun limit
 
 const fetchPosts = async () => {
   try {
