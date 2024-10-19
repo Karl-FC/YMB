@@ -2,10 +2,8 @@ import './App.css'
 import '@coreui/coreui/dist/css/coreui.min.css'
 
 import Header from './Shared/Header';
-import Carousel from './Shared/Carousel/carousel';
+import TheBody from './Body/Body';
 import Footer from './Shared/footer';
-import ArticleCard from './card';
-import Blog from './Shared/Cards/Blog';
 
 function App() {
 
@@ -13,10 +11,7 @@ function App() {
     <>
       <Header></Header>
       <div>
-        <Carousel></Carousel>
-      </div>
-      <div>
-        <Blog></Blog>
+          <TheBody></TheBody>
       </div>
       <Footer></Footer>
     </>

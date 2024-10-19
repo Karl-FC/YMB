@@ -13,7 +13,7 @@ const fetchPosts = async () => {
     }
     return data.data;
   } catch (error) {
-    console.error('Error fetching posts:', error);
+    console.error('Error fetch postssss:', error);
     return [];
   }
 };
@@ -28,15 +28,21 @@ function Blog() {
   return (
     <div>
       {posts.length > 0 ? (
-        posts.map((post, index) => (
-          <ArticleCard
-            key={index}
-            title={post.message || "MAG ISIP NG TITLE"} //error kung wala
-            caption={post.story || "Caption???"}
-            pic={`https://graph.facebook.com/${post.id}/picture?access_token=${accessToken}`}
-            date={new Date(post.created_time).toLocaleDateString()}
-          />
-        ))
+        posts.map((post, index) => {
+          const imageUrl = post.attachments && post.attachments.data[0].media
+            ? post.attachments.data[0].media.image.src
+            : './src/assets/favicon-32x32.png'; //logo lang muna kung walang pic
+
+          return (
+            <ArticleCard
+              key={index}
+              title={post.id || "No title"}
+              caption={post.message || "No caption"}
+              pic={imageUrl}
+              date={new Date(post.created_time).toLocaleDateString()}
+            />
+          );
+        })
       ) : (
         <p>No posts available</p>
       )}

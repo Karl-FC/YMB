@@ -1,15 +1,14 @@
 import { CCard,CRow,CCol,CCardImage,CCardTitle,CCardText,CCardBody } from "@coreui/react";
 
-
 function ArticleCard({ title, caption, pic, date }) {
 
     return(
         <>
         <div className="card">
-                    <CCard className="mb-3" style={{ maxWidth: '540px' }}>
+                    <CCard className="mb-3" style={{ Width: '150%' }}>
             <CRow className="g-0">
                 <CCol md={4}>
-                <CCardImage src={pic} />
+                <CCardImage src={pic}  />
                 </CCol>
                 <CCol md={8}>
                 <CCardBody>
@@ -28,7 +27,7 @@ function ArticleCard({ title, caption, pic, date }) {
         </>
     )
 
-
 }
+
 
 export default ArticleCard
