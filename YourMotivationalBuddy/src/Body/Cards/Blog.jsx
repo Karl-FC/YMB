@@ -7,7 +7,7 @@ var ilan = 5; //Yun limit
 
 const fetchPosts = async () => {
   try {
-    const response = await fetch(`https://graph.facebook.com/v21.0/${pageId}/feed?access_token=${accessToken}&limit=${ilan}`);
+    const response = await fetch(`https://graph.facebook.com/v21.0/${pageId}/feed?access_token=${accessToken}`);
     const data = await response.json();
     if (data.error) {
       throw new Error(data.error.message);
