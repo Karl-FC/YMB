@@ -1,10 +1,11 @@
 import './App.css'
-import React from 'react';
 import '@coreui/coreui/dist/css/coreui.min.css'
 
 import Header from './Shared/Header';
-import Hero from './Shared/hero';
+import Carousel from './Shared/Carousel/carousel';
 import Footer from './Shared/footer';
+import ArticleCard from './card';
+import Blog from './Shared/Cards/Blog';
 
 function App() {
 
@@ -12,7 +13,10 @@ function App() {
     <>
       <Header></Header>
       <div>
-        <Hero></Hero>
+        <Carousel></Carousel>
+      </div>
+      <div>
+        <Blog></Blog>
       </div>
       <Footer></Footer>
     </>

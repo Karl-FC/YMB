@@ -15,6 +15,7 @@
     "@coreui/icons-react": "^2.3.0",
     "@coreui/react": "^5.4.0",
     "bootstrap": "^5.3.3",
+    "facebook-sdk": "^0.3.3",
     "firebase": "^10.14.1",
     "keen-slider": "^6.8.6",
     "react": "^18.3.1",
