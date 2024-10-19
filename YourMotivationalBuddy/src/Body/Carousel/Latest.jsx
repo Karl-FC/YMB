@@ -1,9 +1,9 @@
 import { useState, useEffect } from 'react';
-import ArticleCard from '../../card';
+import Thumbnail from './Thumbnail';
 
 const accessToken = 'EAAWCp91tUGgBOZBI5I9iikZCwJh1HWZChZCN7xNR7QRthaJNl0Iw84s0pIgeZCAiZAS6uucL0aSeEiYWFZBsVGIeEbjixhxC7Kv5UqrO8lUlQ6ItvOuMsZA0F7o9aQR8rCa2P7NLYBO6lFvxjIhvnoCfhPjjy8gR4n8lZCYAwu1OAOPVguevadygbrcfz9VFqw0cZD'; // expire december 18, 2024
 const pageId = '112504047262722'; // YMB page ID
-var ilan = 5; //Yun limit
+var ilan = 6; //No of Thumbnails
 
 const fetchPosts = async () => {
   try {
@@ -19,7 +19,7 @@ const fetchPosts = async () => {
   }
 };
 
-function Blog() {
+function Latest() {
   const [posts, setPosts] = useState([]);
   
 
@@ -36,20 +36,18 @@ function Blog() {
             : './src/assets/favicon-32x32.png'; //logo lang muna kung walang pic
 
           return (
-            <ArticleCard
+            <Thumbnail
               key={index}
-              title={post.id || "No title"}
               caption={post.message || "No caption"}
               pic={imageUrl}
-              date={new Date(post.created_time).toLocaleDateString()}
             />
           );
         })
       ) : (
-        <p>No posts available</p>
+        <p>Loading...</p>
       )}
     </div>
   );
 }
 
-export default Blog;
+export default Latest;

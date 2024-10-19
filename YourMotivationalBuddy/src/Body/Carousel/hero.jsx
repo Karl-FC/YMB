@@ -1,5 +1,6 @@
 import { useKeenSlider } from "keen-slider/react"
 import "keen-slider/keen-slider.min.css"
+import Thumbnail from "./Thumbnail"
 
 function Hero(){
 
@@ -42,7 +43,7 @@ function Hero(){
     return(
         <>
             <div ref={sliderRef} className="keen-slider">
-                    <div className="keen-slider__slide number-slide1">1</div>
+                    <div className="keen-slider__slide number-slide1"><Thumbnail/></div>
                     <div className="keen-slider__slide number-slide2">2</div>
                     <div className="keen-slider__slide number-slide3">3</div>
                     <div className="keen-slider__slide number-slide4">4</div>

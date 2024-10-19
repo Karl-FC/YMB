@@ -1,15 +1,16 @@
 import Carousel from './Carousel/carousel';
 import Blog from './Cards/Blog';
 
-import { CContainer,CCol } from '@coreui/react';
+import { CContainer,CCol,CRow } from '@coreui/react';
 
 function TheBody() {
 
   return (
     <>
     <CContainer>
-        <CCol></CCol>
-        <CCol>
+        <CRow>
+        <CCol xs={1}></CCol>
+        <CCol xs={10}>
             <div>
                 <Carousel></Carousel>
                 </div>
@@ -17,7 +18,8 @@ function TheBody() {
                 <Blog></Blog>
                 </div>
         </CCol>
-        <CCol></CCol>
+        <CCol xs={1}></CCol>
+        </CRow>
     </CContainer>
     </>
   )
