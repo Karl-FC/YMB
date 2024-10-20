@@ -8,6 +8,8 @@ function Carousel(){
         
     }
 
+
+
     return(
         <div className={styles.Carousel}>
             <Hero style={styles}></Hero>

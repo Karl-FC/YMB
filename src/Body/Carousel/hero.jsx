@@ -28,7 +28,7 @@ const fetchPosts = async () => {
 
 function Hero(){
 
-    const [sliderRef] = useKeenSlider(
+  const [sliderRef, slider] = useKeenSlider(
         {
           loop: true,
         },
@@ -38,14 +38,14 @@ function Hero(){
             let mouseOver = false
             function clearNextTimeout() {
               clearTimeout(timeout)
-            }
+              }
             function nextTimeout() {
-              clearTimeout(timeout)
-              if (mouseOver) return
-              timeout = setTimeout(() => {
-                slider.next()
-              }, 2000) /*2000 miliseconds o 2 seconds */
-            }
+                  clearTimeout(timeout)
+                  if (mouseOver) return
+                  timeout = setTimeout(() => {
+                    slider.next()
+                  }, 2000) /*2000 miliseconds o 2 seconds */
+                }
             slider.on("created", () => {
               slider.container.addEventListener("mouseover", () => {
                 mouseOver = true
@@ -66,11 +66,23 @@ function Hero(){
 
       const [posts, setPosts] = useState([]);
 
-      useEffect(() => {
-        fetchPosts().then(setPosts).catch(console.error);
-      }, []);
 
-      return (
+    useEffect(() => {
+      fetchPosts().then(data => {
+        setPosts(data);
+  
+        // Force window resize
+        const originalWidth = document.body.style.width;
+        document.body.style.width = "50%";
+        setTimeout(() => {
+          document.body.style.width = originalWidth;
+          window.dispatchEvent(new Event('resize'));
+        }, 10); // 10 milliseconds should be enough to trigger the resize event
+  
+      }).catch(console.error);
+    }, [slider]);
+  
+     return (
         <div ref={sliderRef} className="keen-slider">
           {posts.length > 0 ? (
             posts.map((post, index) => (
