@@ -11,7 +11,7 @@ function Header() {
           <CNavbar expand="lg" className="bg-body-tertiary">
             <CContainer fluid>
 
-              <CNavbarBrand href="#"><img src='./src/assets/favicon-32x32.png'/>Your Motivational Buddy</CNavbarBrand>
+              <CNavbarBrand href="#"><img src='./src/assets/Logo.png' width="50"/>Your Motivational Buddy</CNavbarBrand>
               <CNavbarToggler onClick={() => setVisible(!visible)} />
     {/*Lahat ng macocollapse pag nagsmall screen*/}
               <CCollapse className="navbar-collapse" visible={visible}>

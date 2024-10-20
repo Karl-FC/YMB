@@ -9,7 +9,7 @@ function Footer(){
                 <CRow>
             <CCol>
                     <figure>
-                        <img src="./src/assets/favicon-32x32.png" width="100" />
+                        <img src="./src/assets/Logo.png" width="100" />
                     </figure>
                     <h4>Your Motivational Buddy</h4>
                 <div>
