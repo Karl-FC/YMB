@@ -1,6 +1,30 @@
+import { useState,useEffect } from "react"
 import { useKeenSlider } from "keen-slider/react"
 import "keen-slider/keen-slider.min.css"
-import Thumbnail from "./Thumbnail"
+
+import Thumbnail from "./Thumbnail";
+
+const accessToken = 'EAAWCp91tUGgBO9S4LZCXcZCM5ryMVzLnbZA02wSTytn0cig8OlEJLTZAKdiIH7s3D5oCK6ntq1fhMey28SKdlqmWwMUQadrjW0SzZC7eEsv7fWAcqB8WdA49WmjZBSOZCHYJdDDyjoafYbLUkZAdxIhRfsDropMvUoBPu0vjfMC0d5IaG7s4q7cKgJASr8pMqUUZD'; // expire december 18, 2024
+const pageId = '112504047262722'; // YMB page ID
+const ilan = 5; //Kung ilan posts
+
+//Basically yun const sa Blog.jsx
+const fetchPosts = async () => {
+  try {
+    const response = await fetch(`https://graph.facebook.com/v21.0/${pageId}/feed?fields=message,created_time,full_picture&access_token=${accessToken}&limit=${ilan}`);
+    const data = await response.json();
+    if (data.error) {
+      throw new Error(data.error.message);
+    }
+    console.log('Fetched Posts:', data.data); // console
+    return data.data;
+  } catch (error) {
+    console.error('Error fetching posts:', error);
+    return [];
+  }
+};
+
+
 
 function Hero(){
 
@@ -38,19 +62,32 @@ function Hero(){
             slider.on("updated", nextTimeout)
           },
         ]
-      )
+      );
 
-    return(
-        <>
-            <div ref={sliderRef} className="keen-slider">
-                    <div className="keen-slider__slide number-slide1"><Thumbnail/></div>
-                    <div className="keen-slider__slide number-slide2">2</div>
-                    <div className="keen-slider__slide number-slide3">3</div>
-                    <div className="keen-slider__slide number-slide4">4</div>
-                    <div className="keen-slider__slide number-slide5">5</div>
-                </div>
-        </>
-    );
-}
+      const [posts, setPosts] = useState([]);
 
-export default Hero
+      useEffect(() => {
+        fetchPosts().then(setPosts).catch(console.error);
+      }, []);
+
+      return (
+        <div ref={sliderRef} className="keen-slider">
+          {posts.length > 0 ? (
+            posts.map((post, index) => (
+              <div className="keen-slider__slide" key={index}>
+                <Thumbnail
+                  title={post.message || "No title"}
+                  caption={post.message}
+                  pic={post.full_picture}
+                  date={new Date(post.created_time).toLocaleDateString()}
+                />
+              </div>
+            ))
+          ) : (
+            <p>No posts available</p>
+          )}
+        </div>
+      );
+    }
+    
+    export default Hero;

@@ -4,12 +4,13 @@ function Carousel(){
 
     const styles={
         backgroundColor: "black",
-        minHeight: "5000"
+        maxHeight: "500"
+        
     }
 
     return(
         <div className={styles.Carousel}>
-            <Hero></Hero>
+            <Hero style={styles}></Hero>
         </div>
     )
 
